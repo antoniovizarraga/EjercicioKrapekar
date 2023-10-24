@@ -7,7 +7,7 @@ public class Kaprekar {
 
 	public static void main(String[] args) {
 		int numberOfCases = 0;
-		int cases[] = new int [numberOfCases];
+		int cases[];
 		int ascendInt = 0;
 		int descendInt = 0;
 		int result = 0;
@@ -20,24 +20,33 @@ public class Kaprekar {
 		System.out.println("Introduzca el número de casos de prueba:");
 		numberOfCases = sc.nextInt();
 		
-		
+		cases = new int[numberOfCases];
 		
 		for(int x = 0; x < numberOfCases; x++) {
 			System.out.println("Introduzca el número: ");
 			cases[x] = sc.nextInt();
 		}
 		
-		do {
+		for(int z = 0; z < numberOfCases; z++) {
+			ascendInt = cases[z];
+			do {
 			
-			for(int y = 0; y < numberOfCases; y++) {
 				
-				ascendInt = cases[y];
 				
+				// Meto al String el valor de ascendInt con un formato
 				swapStr = String.format("%04d", ascendInt);
 				
+				
+				
+				/* Meto al Array un elemento por cada "letra" que haya
+				 * en el String. Y dicho elemento contendrá la letra
+				 * introducida en el String. */
 				kaprekar = swapStr.split("");
+				
+				//Los ordeno de menor a mayor.
 				Arrays.sort(kaprekar);
 				
+				// Vacío el String porque no hace falta.
 				swapStr = "";
 				
 				for(int x = 0; x < kaprekar.length; x++) {
@@ -65,13 +74,19 @@ public class Kaprekar {
 				
 				swapStr = "";
 				
-				System.out.println(count);
-			}
+				
+				
+				
+				
 			
 			
 			
+			} while(result != 6174);
 			
-		} while(result != 6174 && result != 0);
+			System.out.println(count);
+		}
+		
+		
 		
 		
 		
