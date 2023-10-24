@@ -29,6 +29,15 @@ public class Kaprekar {
 		
 		for(int z = 0; z < numberOfCases; z++) {
 			ascendInt = cases[z];
+			
+			if(cases[z] % 1111 == 0) {
+				System.out.println("El número de operaciones es: " + 8);
+				continue;
+			} else if(cases[z] == 6174) {
+				System.out.println("El número de operaciones es: " + 0);
+				continue;
+			}
+			
 			do {
 			
 				
@@ -83,7 +92,8 @@ public class Kaprekar {
 			
 			} while(result != 6174);
 			
-			System.out.println(count);
+			System.out.println("El número de operaciones es: " + count);
+			count = 0;
 		}
 		
 		
